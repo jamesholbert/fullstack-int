@@ -6,3 +6,11 @@ body {
 	background-color: white;
 }
 
+.header {
+	margin-left: 25px;
+}
+
+.report-top {
+	padding-top: 15px;
+	font-size:2em;
+}
