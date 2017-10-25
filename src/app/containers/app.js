@@ -14,30 +14,58 @@ import {queryData} from '../actions/queryData'
 import '../normalize.css'
 import '../main.css'
 
+import getResponse from './queryData.js'
+
 class App extends React.Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			response:{}
+		}
+
+		this.onToggleEmsi=this.onToggleEmsi.bind(this)
+		this.onToggleFaux=this.onToggleFaux.bind(this)
+		this.queryData=this.queryData.bind(this)
 	}
 
-	// componentWillMount() {
-	// 	this.queryInitialData()
-	// }
+	addCommas(x) {
+	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
 
-	// queryInitialData() {
-	// 	this.props.queryData()
-	// }
+	componentWillMount() {
+		this.queryData(true)
+	}
+
+	onToggleEmsi() {
+		this.queryData(true)
+	}
+
+	onToggleFaux() {
+		this.queryData(false)
+	}
+
+	queryData(emsi) {
+		// Query Episteme here
+		console.log(getResponse(emsi))
+		this.setState({response: getResponse(emsi)})
+		// console.log(this.state.response)
+	}
 
 	render() {
 		return (
 			<div className="container">
 				<div>
 					<Header 
-						occupation={{title:"The Occupations"}}
-						region={{title:"The places"}}
+						occupation={this.state.response.occupation}
+						region={this.state.response.region}
+						onToggleEmsi={this.onToggleEmsi}
+						onToggleFaux={this.onToggleFaux}
 					/>
 					<OccSummary 
-						occupation={{title:"The Occupations"}}
-
+						response={this.state.response}
+						occupation={this.state.response.occupation}
+						summary={this.state.response.summary}
+						addCommas={this.addCommas}
 					/>
 				</div>
 			</div>

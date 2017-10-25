@@ -26,6 +26,9 @@ body {
 	font-size:2em;
 }
 
+.float-right {
+	float: right;
+}
 
 .summary-metrics-container {
 	display: grid;
@@ -41,9 +44,17 @@ body {
 	border-top: solid grey 1px;
 	border-bottom: solid grey 1px;}
 
+.red {
+	color: red;
+}
+.green {
+	color: #74C365;
+}
+
 .summary-metrics-left {
 	grid-column-start: 1;
 }
+
 .summary-metrics-middle {
 	border: solid grey 1px;	
 	grid-column-start: 2;
