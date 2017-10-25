@@ -9,8 +9,6 @@
     "build:prod": "webpack -p && cp templates/index.html dist/index.html"
   },
   "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/jamesholbert/fullstack-int.git"
   },
   "author": "James Wholebear",
   "license": "ISC",
