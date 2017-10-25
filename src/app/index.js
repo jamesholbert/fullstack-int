@@ -4,12 +4,12 @@ import {BrowserRouter, Route} from 'react-router-dom'
 
 // import Footer from './components/Footer'
 import Header from './components/Header'
-// import OccSummary from './components/OccSummary'
+import OccSummary from './components/OccSummary'
 // import RegTrends from './components/RegTrends'
 // import Staffing from './components/Staffing'
 
 import './normalize.css'
-import './skeleton.css'
+// import './skeleton.css'
 import './main.css'
 
 class App extends React.Component {
@@ -21,10 +21,14 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<div className="row">
+				<div>
 					<Header 
 						occupation={{title:"The Occupations"}}
 						region={{title:"The places"}}
+					/>
+					<OccSummary 
+						occupation={{title:"The Occupations"}}
+						
 					/>
 				</div>
 			</div>
