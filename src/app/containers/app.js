@@ -19,13 +19,13 @@ class App extends React.Component {
 		super(props)
 	}
 
-	componentWillMount() {
-		this.queryInitialData()
-	}
+	// componentWillMount() {
+	// 	this.queryInitialData()
+	// }
 
-	queryInitialData() {
-		this.props.queryData()
-	}
+	// queryInitialData() {
+	// 	this.props.queryData()
+	// }
 
 	render() {
 		return (
