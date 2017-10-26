@@ -1,5 +1,11 @@
 This is my Full Stack Interview App Project
 
+Time frame (all Wednesday, October 25th)
+8:35-10:05am
+10:30-12:40pm
+2:05-5:05pm
+8:15-9:35pm
+
 To run the app locally:
 
 1 first clone the repo
