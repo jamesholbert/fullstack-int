@@ -1,4 +1,5 @@
-
+* {
+}
 
 body {
 	background-color: #E8E8E8;
@@ -13,6 +14,7 @@ body {
   padding: 0 20px;
   box-sizing: border-box;
   background-color: white;
+  padding-bottom: 50px;
 }
 
 .component {
@@ -83,3 +85,114 @@ body {
 	margin-bottom: 1em;
 }
 
+.regional-trend-table-container {
+	display: grid;
+	grid-template-columns: 5% 55% 10% 10% 10%;
+	grid-template-rows: 25% 25% 25% 25%;  
+	height: 130px;
+	width: 100%;
+	font-size: .75em;
+	margin-top: 2em;
+}
+
+.column-1 {
+	grid-column-start: 1;
+}
+
+
+.column-2 {
+	grid-column-start: 2;
+}
+
+.column-2-staffing {
+	grid-column-start: 2;
+	text-align: right;
+}
+
+
+.column-3 {
+	grid-column-start: 3;
+	text-align: right;
+}
+
+
+.column-4 {
+	grid-column-start: 4;
+	text-align: right;
+}
+
+
+.column-5 {
+	grid-column-start: 5;
+	text-align: right;
+}
+
+
+.column-6 {
+	grid-column-start: 6;
+	text-align: right;
+}
+
+
+.row-1 {
+	grid-row-start: 1;
+}
+
+
+.row-2 {
+	grid-row-start: 2;
+	border-top: 1px solid grey;
+}
+
+
+.row-3 {
+	grid-row-start: 3;
+	border-top: 1px solid grey;
+}
+
+
+.row-4 {
+	grid-row-start: 4;
+	border-top: 1px solid grey;
+}
+
+
+.row-5 {
+	grid-row-start: 5;
+	border-top: 1px solid grey;
+}
+
+
+.row-6 {
+	grid-row-start: 6;
+	border-top: 1px solid grey;
+}
+
+.circle {
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+}
+
+.circle-region {
+	border:  1px solid blue;
+}
+.circle-state {
+	border:  1px solid #204354;
+}
+.circle-nation {
+	border:  1px solid black;
+}
+
+.staffing-table-container {
+	display: grid;
+	grid-template-columns: 60% 13% 13% 13%;
+	grid-template-rows: 20% 20% 20% 20% 20% 20%;  
+	height: 230px;
+	width: 100%;
+	font-size: .75em;
+}
+
+.text-align-right {
+	text-align: right;
+}

@@ -16,12 +16,14 @@ export default class RegTrends extends React.Component {
 		}
 		let jobCountsToPercents = (a) => {
 			return a.map(i => {
-				return (i/a[0]-1)
+				return Math.round((i/a[0]-1)*1000)/10
 			})
 		}
 		let regionJobPercents = jobCountsToPercents(trend_comparison.regional)
 		let stateJobPercents = jobCountsToPercents(trend_comparison.state)
 		let nationJobPercents = jobCountsToPercents(trend_comparison.nation)
+
+
 
 		let lineChartData={
 			labels: yearsArray(),
@@ -65,8 +67,53 @@ export default class RegTrends extends React.Component {
 							data={lineChartData}
 							width={20}
 							height={10}
-							options={{legend:{display:false}}}
+							options={{
+								legend:{display:false},
+								scales: {
+								    yAxes: [{
+								        scaleLabel: {
+								        	display: true,
+								        labelString: 'Percent Change'
+								      	}
+								    }]
+								}
+							}}
 						/>
+				</div>
+
+				<div className="regional-trend-table-container">
+
+					<div className="column-1 row-2 circle circle-region"></div>
+					<div className="column-1 row-3 circle circle-state"></div>
+					<div className="column-1 row-4 circle circle-nation"></div>
+
+					<div className="column-2 row-1"><b>Region</b></div>
+					<div className="column-3 row-1"><b>{trend_comparison.start_year} Jobs</b></div>
+					<div className="column-4 row-1"><b>{trend_comparison.end_year} Jobs</b></div>
+					<div className="column-5 row-1"><b>Change</b></div>
+					<div className="column-6 row-1"><b>% Change</b></div>
+
+					<div className="column-2 row-2">Region</div>
+					<div className="column-2 row-3">State</div>
+					<div className="column-2 row-4">Nation</div>
+
+					<div className="column-3 row-2">{this.props.addCommas(trend_comparison.regional[0])}</div>
+					<div className="column-3 row-3">{this.props.addCommas(trend_comparison.state[0])}</div>
+					<div className="column-3 row-4">{this.props.addCommas(trend_comparison.nation[0])}</div>
+
+					<div className="column-4 row-2">{this.props.addCommas(trend_comparison.regional[trend_comparison.regional.length-1])}</div>
+					<div className="column-4 row-3">{this.props.addCommas(trend_comparison.state[trend_comparison.state.length-1])}</div>
+					<div className="column-4 row-4">{this.props.addCommas(trend_comparison.nation[trend_comparison.nation.length-1])}</div>
+
+
+					<div className="column-5 row-2">{this.props.addCommas(trend_comparison.regional[trend_comparison.regional.length-1]-trend_comparison.regional[0])}</div>
+					<div className="column-5 row-3">{this.props.addCommas(trend_comparison.state[trend_comparison.state.length-1]-trend_comparison.state[0])}</div>
+					<div className="column-5 row-4">{this.props.addCommas(trend_comparison.nation[trend_comparison.nation.length-1]-trend_comparison.nation[0])}</div>
+
+
+					<div className="column-6 row-2">{regionJobPercents[regionJobPercents.length-1]}</div>
+					<div className="column-6 row-3">{stateJobPercents[stateJobPercents.length-1]}</div>
+					<div className="column-6 row-4">{nationJobPercents[nationJobPercents.length-1]}</div>
 				</div>
 			</div>
 		)
