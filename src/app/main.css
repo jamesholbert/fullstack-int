@@ -75,3 +75,11 @@ body {
 .bottom-summary-metric {
 	margin-bottom: 2.5em;
 }
+
+.sectionHeader {
+	margin-top: 2em;
+	border-bottom: solid grey 1px;
+	width:100%;
+	margin-bottom: 1em;
+}
+

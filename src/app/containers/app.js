@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 // import Footer from './components/Footer'
 import Header from '../components/Header'
 import OccSummary from '../components/OccSummary'
-// import RegTrends from './components/RegTrends'
+import RegTrends from '../components/RegTrends'
 // import Staffing from './components/Staffing'
 
 import {connect} from 'react-redux'
@@ -66,6 +66,9 @@ class App extends React.Component {
 						occupation={this.state.response.occupation}
 						summary={this.state.response.summary}
 						addCommas={this.addCommas}
+					/>
+					<RegTrends
+						response={this.state.response}
 					/>
 				</div>
 			</div>

@@ -7,7 +7,6 @@ export default class Summary extends React.Component {
 	render() {
 		let {summary} = this.props.response
 		let {occupation} = this.props.response
-		console.log({summary})
 		let lqAboveBelow = {
 			class : "red",
 			text : "below",
